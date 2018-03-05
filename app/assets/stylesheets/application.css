@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: Helvetica;
+}
+
+h2 {
+  text-transform: capitalize;
+  color: navy;
+}
+
+h3 {
+  color: navy;
+}
+
+body a{
+  color: red;
+  text-transform: capitalize;
+}
+
+body a:hover {
+  color: navy;
+}
