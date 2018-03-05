@@ -1,0 +1,12 @@
+<h1>Superheroes</h1>
+
+<ul>
+  <% @superheroes_w_superpower.each do |superhero| %>
+    <li>
+      <%= link_to superhero.super_name, superhero_path(superhero) %>
+    </li>
+    <br>
+  <% end %>
+</ul>
+
+<%= link_to "New Superhero", new_superhero_path %>

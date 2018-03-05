@@ -1,0 +1,7 @@
+<h1><%= @superhero.name %></h1>
+
+<h3><%= @superhero.super_name %></h3>
+
+<h3><%= link_to @superhero.superpower_name, @superhero.superpower_object %></h3>
+
+<%= link_to "DELETE SUPERHERO", @superhero, method: :delete %>
