@@ -1,0 +1,21 @@
+<h1>Superheroes with the superpower of <%= @search_name %>!</h1>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search by superpower:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @superheroes_with_power %>
+<% @superheroes_with_power.each do |superhero| %>
+<ul>
+  <li>
+    <%= link_to superhero.name, superhero_path(superhero) %>
+  </li>
+
+</ul>
+<% end %>
+<% else %>
+<p>There are no superheroes with this super power. Why don't you create one?</p>
+<%= link_to "Create New Superhero", new_superhero_path %>
+<% end %>
