@@ -3,8 +3,14 @@
 <ul>
   <% @superheroes.each do |superhero| %>
     <li>
-      <%= superhero.super_name %>
+      <%= link_to superhero.name, @superhero %>
     </li>
     <br>
   <% end %>
+
+<%= form_tag("/superpowers", method: "get") do %>
+  <%= label_tag(:q, "Search for superpowers:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 </ul>
