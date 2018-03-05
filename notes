@@ -1,0 +1,25 @@
+routes
+
+join table hero_powers√
+
+/superheroes - index. link to each superhero show.
+search function to search heroes with certain powers 
+
+form_tag index_path, method: get do
+  text_field_tag :term
+  submit
+
+Superpower.search(term)
+  t = term.downcase
+  self.all.select{|power| power.name.downcase.include? (t)}     .map {|power| power.name}
+
+show: name, super_name, link_to superpower
+
+new: name, super_name, collection_select for 1 power only
+validates: super_name uniqueness
+
+collection_select :superpower, Superpower.all, :id, :name
+
+----------
+/superpowers - index. link to each superpower show
+show: name, description
