@@ -1,0 +1,5 @@
+<h2><%= @superhero.name %></h2>
+<h3>Super Name: <%= @superhero.super_name %></h3>
+<h3 style="color:red">Super Power: <%= link_to @superhero.superpower.name, superpower_path(@superhero.superpower) %></h3>
+
+<%= button_to "Delete", @superhero, :method => :delete %>
