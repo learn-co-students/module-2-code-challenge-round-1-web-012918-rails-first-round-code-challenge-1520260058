@@ -1,0 +1,9 @@
+<h1>Create Super Hero:</h1>
+<%= form_for @superhero do |f| %>
+<%= f.label :name %> <br>
+<%= f.text_field :name %> <br>
+<%= f.label :super_name %> <br>
+<%= f.text_field :super_name %> <br>
+<%= f.label :superpower %> <br>
+<%= f.collection_select :superpower, Superpower.all, :id, :name, prompt: "Please Select" %> <%= f.submit "Create Superhero" %>
+<% end %>
