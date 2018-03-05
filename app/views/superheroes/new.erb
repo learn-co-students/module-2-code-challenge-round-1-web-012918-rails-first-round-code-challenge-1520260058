@@ -1,0 +1,15 @@
+<h1>Create Super Hero</h1>
+
+<%= form_for @superhero do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :super_name %><br>
+  <%= f.text_field :super_name %><br>
+  <%= f.label "Superpower" %><br>
+  <select name="superpower_id">
+    <% Superpower.all.each do |sp| %>
+      <option value="<%= sp.id %>"><%= sp.name %>
+    <% end %>
+  </select><br>
+  <%= f.submit %>
+<% end %>
