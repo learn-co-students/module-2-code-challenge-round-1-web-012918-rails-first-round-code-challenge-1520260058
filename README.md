@@ -1,3 +1,28 @@
+<%= form_tag superheroes_path, method: :get do %>
+  <%= label_tag(:'superhero[search]', "Search by superpower:") %>
+  <%= text_field_tag :'superhero[search]' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<%= #params.inspect %>
+<%# Superpower.all.each do |sp| %>
+<%=# sp.name %>
+<%# end %>
+
+<% if @searched %>
+
+<% else %>
+  <ul>
+    <% @superheroes.each do |superhero| %>
+      <li>
+        <%= link_to superhero.super_name, superhero_path(superhero) %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
+<%= end %>
+
+
 # Rails Code Challenge
 
 It's time to put our Rails know-how to the test. Today, we have a superhero application.
@@ -24,7 +49,7 @@ We have several different superpowers and each can be bestowed upon **more than 
 
 ## Instructions / Deliverables
 
-Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one. 
+Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
 
 ![img](gif2.gif)
 

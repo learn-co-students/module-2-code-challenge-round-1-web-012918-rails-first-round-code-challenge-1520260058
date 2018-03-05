@@ -1,9 +1,24 @@
 <h2>All Superheroes</h2>
 
+<%= form_tag superheroes_path, method: :get do %>
+  <%= label_tag(:'superhero[search]', "Search by superpower:") %>
+  <%= text_field_tag :'superhero[search]' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<%# Superpower.all.each do |sp| %>
+<%=# sp.name %>
+<%# end %> <br>
+
+<%=# params.inspect %>
+
+<%=# Superhero.find_by(superpower: params[])%>
+
+
 <ul>
   <% @superheroes.each do |superhero| %>
     <li>
-      <%= superhero.super_name %>
+      <%= link_to superhero.super_name, superhero_path(superhero) %>
     </li>
     <br>
   <% end %>
