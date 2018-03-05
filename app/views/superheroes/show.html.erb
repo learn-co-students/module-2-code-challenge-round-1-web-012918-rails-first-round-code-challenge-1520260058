@@ -1,0 +1,6 @@
+Name: <%= @superhero.name %><br>
+Super Name: <%= @superhero.super_name %><br>
+
+Superpower: <%= link_to @superhero.superpower.name, superpower_path(@superhero.superpower) %><br><br>
+
+<%= button_to 'Delete Superhero', superhero_path, :method => :delete %><br>
