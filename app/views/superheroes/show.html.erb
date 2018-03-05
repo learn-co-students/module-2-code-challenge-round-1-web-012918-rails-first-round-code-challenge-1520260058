@@ -1,0 +1,8 @@
+<h1><%= @superhero.name %></h1>
+<h3>Aka <%= @superhero.super_name %></h3>
+<% if @superhero.superpower %>
+  <p>Super-Power: <%= link_to @superhero.superpower.name, @superhero.superpower %></p>
+<% end %>
+<%= link_to "Edit Hero", edit_superhero_path(@superhero) %> <br>
+<%= link_to "Delete Hero", @superhero, method: :delete %> <br>
+<%= link_to "Back to All Heroes", superheroes_path %>
