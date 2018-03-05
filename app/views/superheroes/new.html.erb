@@ -1,0 +1,16 @@
+<% if @superhero.errors.any? %>
+<ul>
+  <% @superhero.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @superhero do |f|%>
+  <%= f.label :name%>
+  <%= f.text_field :name%><br>
+  <%= f.label :super_name%>
+  <%= f.text_field :super_name%><br>
+  <%= collection_select(:superhero, :superpower_id, Superpower.all, :id, :name, prompt: true) %>
+<%= f.submit %>
+<% end %>
