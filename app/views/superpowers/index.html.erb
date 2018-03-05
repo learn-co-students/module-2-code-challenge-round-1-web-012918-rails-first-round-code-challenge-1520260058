@@ -3,10 +3,12 @@
 <ul>
   <% @superpowers.each do |superpower| %>
     <li>
-      <%= superpower.name %>
+      <%= link_to superpower.name, superpower_path(superpower) %>
       <br>
       Description: <%= superpower.description %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<%= link_to "See All Superheroes", superheroes_path %>

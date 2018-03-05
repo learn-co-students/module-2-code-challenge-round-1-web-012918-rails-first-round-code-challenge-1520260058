@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :superpowers, only: [:index]
-  resources :superheroes, only: [:index]
+
+  root 'application#welcome'
+
+  resources :superpowers, only: [:index, :show]
+  resources :superheroes
 
 end
